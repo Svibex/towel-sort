@@ -1,12 +1,9 @@
 module.exports = function towelSort (matrix) {
-    let tmp = '',
-        newArray = [],
-    for(let i=0; i < matrix.length; i++){
-        for(let j=0; j<matrix[i].length; j++) {
-            tmp = tmp + matrix[i][j];
+    if(!matrix || matrix.length === 0) return [];
+    for (let i=0 ;i<matrix.length;i++) {
+        if(i%2 !== 0) {
+            matrix[i].reverse();
         }
-        newArray.push(tmp);
-        tmp = ''
     }
-  return newArray;
+    return matrix.join(',').split(',');
 }
